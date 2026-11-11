@@ -1,0 +1,9 @@
+<ul class="publication-list">
+{% for pub in site.data.publications %}
+  <li>
+    <strong>{{ pub.title }}</strong><br />
+    {% for author in pub.authors %}{% if author == "Junteng Liu" %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}<br />
+    <em>{{ pub.venue }} {{ pub.year }}</em>{% if pub.first_author %} &middot; First author{% endif %}
+  </li>
+{% endfor %}
+</ul>
